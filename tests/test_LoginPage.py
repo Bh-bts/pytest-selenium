@@ -8,9 +8,9 @@ from pages.HomePage import HomePage
 
 class Test_Login(BaseTest):
 
-    def verify_the_user_can_successfully_login_with_valid_email_and_password(self):
+    def test_verify_the_user_can_successfully_login_with_valid_email_and_password(self):
         self.homePage = HomePage(self.driver)
-        self.homePage.clickOnLinkOnHeader()
+        self.homePage.click_login_link_on_header()
 
         self.loginPage = LoginPage(self.driver)
         email = os.getenv('DEMO_BLAZE_EMAIL')
