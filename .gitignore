@@ -17,6 +17,7 @@ __pycache__/
 Thumbs.db
 
 # Report
+/pytest-report
 report.html
 
 # Static folders

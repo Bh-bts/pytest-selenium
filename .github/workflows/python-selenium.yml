@@ -24,7 +24,7 @@ jobs:
 
       # Run the PyTest script
       - name: Run PyTest
-        run: pytest --html=report.html --self-contained-html
+        run: pytest --html=./pytest-report/report.html --self-contained-html
         env:
           DEMO_BLAZE_EMAIL: ${{ secrets.DEMO_BLAZE_EMAIL }}
           DEMO_BLAZE_PASSWORD: ${{ secrets.DEMO_BLAZE_PASSWORD }}
@@ -33,4 +33,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: test-results
-          path: report.html
+          path: pytest-report/report.html
