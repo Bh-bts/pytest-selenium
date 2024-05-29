@@ -12,10 +12,6 @@ jobs:
       - name: Check out this repo
         uses: actions/checkout@v2
 
-        env:
-          DEMO_BLAZE_EMAIL: ${{ secrets.DEMO_BLAZE_EMAIL }}
-          DEMO_BLAZE_PASSWORD: ${{ secrets.DEMO_BLAZE_PASSWORD }}
-
       # Setup Python
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -28,7 +24,10 @@ jobs:
 
       # Run the PyTest script
       - name: Run PyTest
-        run: pytest --html=report.html
+        run: pytest --html=report.html --self-contained-html
+        env:
+          DEMO_BLAZE_EMAIL: ${{ secrets.DEMO_BLAZE_EMAIL }}
+          DEMO_BLAZE_PASSWORD: ${{ secrets.DEMO_BLAZE_PASSWORD }}
 
       - name: Upload test artifacts
         uses: actions/upload-artifact@v2
