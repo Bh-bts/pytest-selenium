@@ -12,19 +12,19 @@ def setUp(request):
         options = webdriver.ChromeOptions()
         if headless:
             options.add_argument('--headless')
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(options)
         print("Launching Chrome browser")
     elif browser == 'firefox':
         options = webdriver.FirefoxOptions()
         if headless:
             options.add_argument('--headless')
-        driver = webdriver.Firefox()
+        driver = webdriver.Firefox(options)
         print("Launching Firefox browser")
     elif browser == 'edge':
         options = webdriver.EdgeOptions()
         if headless:
             options.add_argument('--headless')
-        driver = webdriver.Edge()
+        driver = webdriver.Edge(options)
         print("Launching Edge browser")
     else:
         raise ValueError(f"Browser '{browser}' is not supported")
